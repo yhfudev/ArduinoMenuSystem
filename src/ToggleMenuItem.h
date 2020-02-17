@@ -1,3 +1,10 @@
+/**
+ * \file    ToggleMenuItem.h
+ * \brief   ToggleMenuItem
+ * \version 3.1.0
+ * \date    2020-02-16
+ * \copyright  Licensed under the MIT license (see LICENSE)
+ */
 #ifndef _TOGGLEMENUITEM_H
 #define _TOGGLEMENUITEM_H
 

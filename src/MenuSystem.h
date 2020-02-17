@@ -1,6 +1,9 @@
-/*
- * Copyright (c) 2015, 2016 arduino-menusystem
- * Licensed under the MIT license (see LICENSE)
+/**
+ * \file    MenuSystem.h
+ * \brief   menu system
+ * \version 3.1.0
+ * \date    2020-02-16
+ * \copyright  Licensed under the MIT license (see LICENSE)
  */
 
 #ifndef MENUSYSTEM_H

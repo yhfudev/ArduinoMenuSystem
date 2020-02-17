@@ -1,4 +1,10 @@
-
+/**
+ * \file    TextEditMenuItem.h
+ * \brief   TextEditMenuItem
+ * \version 3.1.0
+ * \date    2020-02-16
+ * \copyright  Licensed under the MIT license (see LICENSE)
+ */
 // from https://github.com/willie68/arduino-menusystem/blob/master/MenuSystem.h
 #ifndef TEXT_EDIT_MENU_ITEM_H
 #define TEXT_EDIT_MENU_ITEM_H
