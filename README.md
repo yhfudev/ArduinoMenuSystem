@@ -12,15 +12,16 @@ useful to you:
 
 ## Contribution
 
-If you'd like to contribute to `arduino-menusystem`, please submit a
+If you'd like to contribute to `MenuSystem`, please submit a
 pull-request.
 
-## Donate
-
-* Bitcoin:  1D4MBvrR9w4yVEHvQbzM8WAuJjDdzp7trA
-* Ethereum: 0x75804bb16c8177D919ea54a35980c9202F294A10
-
 ## Changelog
+
+**3.1.0 - 17-02-2020**
+
+* port to PC
+* remove MenuSystem.cpp and use single MenuSystem.h
+* add NumericDisplayMenuItem, TextEditMenuItem, ToggleMenuItem
 
 **3.0.0 - 24-08-2017**
 
