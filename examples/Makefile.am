@@ -1,0 +1,3 @@
+
+SUBDIRS=current_item
+

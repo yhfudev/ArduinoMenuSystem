@@ -6,10 +6,18 @@
 #ifndef MENUSYSTEM_H
 #define MENUSYSTEM_H
 
-#if defined(ARDUINO) && ARDUINO >= 100
-  #include <Arduino.h>
+#if defined(ARDUINO)
+#if ARDUINO >= 100
+#include <Arduino.h>
 #else
-  #include <WProgram.h>
+#include <WProgram.h>
+#endif
+#else
+#include <stdint.h> // uint8_t, uint32_t
+#include <stdlib.h>    /* size_t */
+#include <stdio.h>
+#include <string>
+#define String std::string
 #endif
 
 class Menu;

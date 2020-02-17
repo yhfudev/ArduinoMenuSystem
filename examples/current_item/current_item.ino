@@ -9,6 +9,12 @@
 
 #include <MenuSystem.h>
 
+#if defined(ARDUINO)
+#define TD(a) Serial.println(a)
+#else
+#define TD(a) printf("%s\n", a)
+#endif
+
 // renderer
 
 class MyRenderer : public MenuComponentRenderer {
@@ -18,19 +24,19 @@ public:
     }
 
     void render_menu_item(MenuItem const& menu_item) const {
-        Serial.println(menu_item.get_name());
+        TD(menu_item.get_name());
     }
 
     void render_back_menu_item(BackMenuItem const& menu_item) const {
-        Serial.println(menu_item.get_name());
+        TD(menu_item.get_name());
     }
 
     void render_numeric_menu_item(NumericMenuItem const& menu_item) const {
-        Serial.println(menu_item.get_name());
+        TD(menu_item.get_name());
     }
 
     void render_menu(Menu const& menu) const {
-        Serial.println(menu.get_name());
+        TD(menu.get_name());
     }
 };
 MyRenderer my_renderer;
@@ -57,22 +63,22 @@ MenuItem mu1_mi2("Level 2 - Item 2 (Item)", &on_item4_selected);
 bool bRanCallback = false;
 
 void on_item1_selected(MenuComponent* p_menu_component) {
-    Serial.println("Item1 Selected");
+    TD("Item1 Selected");
     bRanCallback = true;
 }
 
 void on_item2_selected(MenuComponent* p_menu_component) {
-    Serial.println("Item2 Selected");
+    TD("Item2 Selected");
     bRanCallback = true;
 }
 
 void on_item3_selected(MenuComponent* p_menu_component) {
-    Serial.println("Item3 Selected");
+    TD("Item3 Selected");
     bRanCallback = true;
 }
 
 void on_item4_selected(MenuComponent* p_menu_component) {
-    Serial.println("Item4 Selected");
+    TD("Item4 Selected");
     bRanCallback = false;
     ms.reset();
 }
@@ -80,7 +86,9 @@ void on_item4_selected(MenuComponent* p_menu_component) {
 // Standard arduino functions
 
 void setup() {
+#if defined(ARDUINO)
     Serial.begin(9600);
+#endif
 
     ms.get_root_menu().add_item(&mm_mi1);
     ms.get_root_menu().add_item(&mm_mi2);
@@ -96,5 +104,7 @@ void loop() {
         ms.next();
         bRanCallback = false;
     }
+#if defined(ARDUINO)
     delay(2000);
+#endif
 }
