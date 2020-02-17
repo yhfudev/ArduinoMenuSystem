@@ -30,18 +30,18 @@ public:
 	//! @param select_fn The function to call when this MenuItem is selected.
 	//! @param value the buffer with the text to edit.
 	//! @param size size of the buffer
-	TextEditMenuItem(const char* name, SelectFnPtr select_fn, char* value, uint8_t size) : MenuItem(basename, select_fn), _value(value), _size(size) {}
+	TextEditMenuItem(const char* basename, SelectFnPtr select_fn, char* value, uint8_t size) : MenuItem(basename, select_fn), _value(value), _size(size) {}
 
-	EDITING_STATE _editing_state;
 
 	char* get_value() const { return _value; }
 	uint8_t get_size() const { return _size; }
 	uint8_t get_pos() const { return _pos; }
 
 	void set_value(char* value) { _value = value; }
-	void set_size(byte size) { _size = value; }
+	void set_size(uint8_t size) { _size = size; }
+	EDITING_STATE get_edit_state() const {return _editing_state;}
 
-	virtual void render(MenuComponentRenderer2 const& renderer) const { renderer.render_text_edit_menu_item(*this); }
+	virtual void render(MenuComponentRenderer const& renderer) const { MenuComponentRenderer2 const& my_renderer = static_cast<MenuComponentRenderer2 const&>(renderer); my_renderer.render_text_edit_menu_item(*this); }
 
 protected:
 	virtual bool next(bool loop = false);
@@ -53,6 +53,7 @@ protected:
 	char getPrevValidChar(char value);
 
 protected:
+	EDITING_STATE _editing_state;
 	char* _value;
 	uint8_t _size;
 	uint8_t _pos;

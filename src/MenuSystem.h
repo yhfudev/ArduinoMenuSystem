@@ -233,7 +233,7 @@ public:
     virtual bool has_children() const {
       return false;
     }
-    bool has_focus() { return _has_focus; }
+    bool has_focus() const { return _has_focus; }
 protected:
     //! \copydoc MenuComponent::next
     //!
