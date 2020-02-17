@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libmenusystem
+URL: https://github.com/yhfudev/ArduinoMenuSystem.git
+Description: Library providing the menu system
+Version: @PACKAGE_VERSION@
+Requires:
+Libs: -L${libdir} -lmenusystem
+Cflags: -I${includedir}

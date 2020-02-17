@@ -27,7 +27,7 @@ AM_LDFLAGS += \
     `getconf LFS64_LDFLAGS` \
     $(NULL)
 
-AM_LDFLAGS += -L$(top_builddir)/src/ -lmenusystem
+AM_LDFLAGS += -L$(top_builddir)/src/ #-lmenusystem
 
 if DEBUG
 # use "valgrind --tool=memcheck --leak-check=yes" to check memory leak, MemWatch will drag the program.
@@ -68,8 +68,8 @@ bin_PROGRAMS=
 #SDL_CFLAGS := $(shell sdl2-config --cflags)
 #SDL_LDFLAGS := $(shell sdl2-config --libs)
 
-currentitem_LDADD = $(top_builddir)/src/libmenusystem.la $(libmenusystem_LIBADD)
-currentitem_CFLAGS = $(AM_CFLAGS) $(SDL_CFLAGS) $(libmenusystem_la_CFLAGS)
+currentitem_LDADD = #$(top_builddir)/src/libmenusystem.la $(libmenusystem_LIBADD)
+currentitem_CFLAGS = $(AM_CFLAGS) $(SDL_CFLAGS) #$(libmenusystem_la_CFLAGS)
 currentitem_CXXFLAGS = $(currentitem_CFLAGS)
 currentitem_LDFLAGS = $(AM_LDFLAGS) $(SDL_LDFLAGS)
 
